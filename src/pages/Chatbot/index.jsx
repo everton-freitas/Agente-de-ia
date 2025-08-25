@@ -25,9 +25,9 @@ function Chatbot() {
   const sendMessage = async () => {
     if (!input) return;
 
-    // Adiciona mensagem do usuário
+    
     setMessages((prev) => [...prev, { sender: "user", text: input }]);
-
+    setInput("");
     try {
       const res = await axios.post(
         "http://95.216.142.66:5678/webhook/chatbot",
@@ -48,7 +48,7 @@ function Chatbot() {
       ]);
     }
 
-    setInput("");
+    
   };
 
   return (
@@ -93,7 +93,6 @@ function Chatbot() {
             maxRows={8}
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && sendMessage()}
             placeholder="Digite sua pergunta..."
           />
           <Button onClick={sendMessage}>
