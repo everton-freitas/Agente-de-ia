@@ -30,7 +30,7 @@ function Chatbot() {
 
     try {
       const res = await axios.post(
-        "http://95.216.142.66:5678/webhook-test/chatbot",
+        "http://95.216.142.66:5678/webhook/chatbot",
         { message: input },
         { headers: { "Content-Type": "application/json" } }
       );
