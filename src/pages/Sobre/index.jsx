@@ -1,5 +1,5 @@
 import { Button, Chat, ChatContainer, ChatHistory, History, Input, Text, TextUser } from "../Chatbot/styles"
-import botAvatar from "../../assets/bot-avatar.png"
+import evertonAvatar from "../../assets/foto-everton-chatbot.jpeg"
 import { Heart } from "phosphor-react"
 import { useState } from "react"
 import { HeartFill, HeartRegular } from "./styles"
@@ -18,7 +18,7 @@ function About() {
                 <History>
                     <TextUser style={{ justifyContent: "start" }}>
                         <img
-                            src={botAvatar}
+                            src={evertonAvatar}
                             alt="bot"
                             style={{ width: "40px", height: "40px", borderRadius: "6.7px", alignSelf: "end", marginBottom: "0.2rem" }}
                         />
@@ -32,7 +32,7 @@ function About() {
                             <br /><br /><strong>Tecnologias Utilizadas</strong><br /><br />
                             • React.js para construção da interface e gerenciamento de estados.<br />
                             • Styled Components para estilização dinâmica e componentizada.<br />
-                            • n8n, utilizado para integrar a API da OpenAI,
+                            • n8n, utilizado Agente de IA e integrando com a API da OpenAI,
                             possibilitando o processamento inteligente das mensagens enviadas pelo usuário.
                             <br /><br /><strong>Desenvolvedor: Everton Freitas</strong>
                             
