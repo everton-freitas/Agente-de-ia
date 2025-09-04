@@ -41,7 +41,7 @@ function Chatbot() {
       const sessionId = localStorage.getItem("sessionId"); 
 
       const res = await axios.post(
-        "http://95.216.142.66:5678/webhook-test/chatbot",
+        "http://95.216.142.66:5678/webhook-test/chat",
         { message: input, sessionId },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -49,7 +49,7 @@ function Chatbot() {
       // Adiciona resposta do bot
       setMessages((prev) => [
         ...prev,
-        { sender: "bot", text: res.data.reply },
+        { sender: "bot", text: res.data[0].output },
       ]);
     } catch (err) {
       console.error(err);
@@ -59,6 +59,8 @@ function Chatbot() {
       ]);
     }
 };
+
+console.log(messages.bot)
 
 return (
   <ChatContainer>
