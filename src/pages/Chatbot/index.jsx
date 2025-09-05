@@ -41,7 +41,7 @@ function Chatbot() {
       const sessionId = localStorage.getItem("sessionId"); 
 
       const res = await axios.post(
-        "http://95.216.142.66/:5678/webhook/chat",
+        "https://integralci-oculum.jhujt5.easypanel.host/webhook/chat",
         { message: input, sessionId },
         { headers: { "Content-Type": "application/json" } }
       );
