@@ -22,7 +22,7 @@ function Chatbot() {
 
   useEffect(() => {
     setMessages([{
-      sender: "bot", text: "👋 Olá! Eu sou seu professor virtual de programação. O que você gostaria de aprender hoje?"
+      sender: "bot", text: "👋 Olá! Sou o Compilito, seu professor virtual de programação. O que você gostaria de aprender hoje?"
     }])
   }, [])
 
