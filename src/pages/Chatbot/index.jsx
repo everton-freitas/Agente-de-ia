@@ -11,6 +11,8 @@ function Chatbot() {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
 
+  
+
   useEffect(() => {
     let sessionId = localStorage.getItem("sessionId");
 
@@ -20,14 +22,41 @@ function Chatbot() {
     }
   }, []);
 
-  useEffect(() => {
+
+   useEffect(() => {
+    const saved = localStorage.getItem("chatMessages");
+    
+    if (saved && saved !== "[]") {
+      // Se existem mensagens salvas, carrega elas
+      try {
+        const parsedMessages = JSON.parse(saved);
+        if (parsedMessages.length > 0) {
+          setMessages(parsedMessages);
+          return;
+        }
+      } catch (error) {
+        console.error("Erro ao carregar mensagens:", error);
+      }
+    }
+    
+    // Se não há mensagens salvas ou array está vazio, define mensagem inicial
     setMessages([{
-      sender: "bot", text: "👋 Olá! Sou o Compilito, seu professor virtual de programação. O que você gostaria de aprender hoje?"
-    }])
-  }, [])
+      sender: "bot", 
+      text: "👋 Olá! Sou o Compilito, seu professor virtual de programação. O que você gostaria de aprender hoje?"
+    }]);
+  }, []);
+
+  // Salvar mensagens no localStorage sempre que mudarem (exceto estado inicial vazio)
+  useEffect(() => {
+    if (messages.length > 0) {
+      localStorage.setItem("chatMessages", JSON.stringify(messages));
+    }
+  }, [messages]);
+  
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    
   }, [messages]);
 
 
