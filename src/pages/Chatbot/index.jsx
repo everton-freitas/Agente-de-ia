@@ -112,7 +112,7 @@ function Chatbot() {
       const sessionId = localStorage.getItem("sessionId"); 
 
       const res = await axios.post(
-        "https://27617ae48a47.ngrok-free.app/webhook/chat",
+        "https://05282ff69942.ngrok/webhook/chat",
         { message: messageToSend, sessionId },
         { headers: { "Content-Type": "application/json" } }
       );
