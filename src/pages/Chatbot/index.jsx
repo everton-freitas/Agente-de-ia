@@ -192,7 +192,7 @@ function Chatbot() {
           placeholder="Digite sua pergunta..."
           disabled={isLoading}
         />
-        <Button onClick={sendMessage} disabled={isLoading}>
+        <Button style={{ zIndex: 9999}} onClick={sendMessage} disabled={isLoading}>
           <PaperPlaneRightIcon
             color={isLoading ? '#ccc' : undefined} 
           />

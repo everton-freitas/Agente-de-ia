@@ -49,10 +49,10 @@ function About() {
                 <Input
                     minRows={1}
                     maxRows={8}
-                    placeholder="Gostei muito do seu trabalho"
+                    placeholder="Gostou do projeto? de um like!"
                     disabled
                 />
-                <Button variant="like" onClick={handleToggle}>
+                <Button style={{ zIndex: 9999}} variant="like" onClick={handleToggle}>
                     
                     <Heart size={20} />
                 </Button>

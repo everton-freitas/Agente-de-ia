@@ -197,8 +197,8 @@ export const History = styled.div`
 
   p {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 0.7rem;
+    gap: 1rem; 
+    margin-bottom: 2rem;
 
      @media (max-width: 768px) {
     margin-bottom: 1.5rem;
