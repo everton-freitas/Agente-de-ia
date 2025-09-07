@@ -5,11 +5,22 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   margin-top: 1.5rem;
 
+
+   @media (max-width: 768px) {
+    justify-content: center;
+    margin-top: 0;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
 
     gap: 0.5rem;
+
+    @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: end;
+  }
 
     a {
       width: 3rem;
@@ -18,6 +29,7 @@ export const HeaderContainer = styled.header`
       display: flex;
       align-items: center;
       justify-content: center;
+      
 
       color: ${({ theme }) => theme['gray-100']};
       border-top: 3px solid transparent;
@@ -33,8 +45,16 @@ export const HeaderContainer = styled.header`
       }
     }
   }
+
+  
 `
 export const Container = styled.div`
     display: flex;
     gap: 1rem;
+
+    @media (max-width: 768px) {
+    flex-direction: column;
+    background-color: ${({ theme }) => theme['gray-800']};
+    
+  }
 `

@@ -1,4 +1,4 @@
-import { Button, Chat, ChatContainer, ChatHistory, History, Input, Text, TextUser } from "../Chatbot/styles"
+import { Button, Chat, ChatContainer, ChatHistory, History, Image, Input, Text, TextUser } from "../Chatbot/styles"
 import evertonAvatar from "../../assets/foto-everton-chatbot.jpeg"
 import { Heart } from "phosphor-react"
 import { useState } from "react"
@@ -17,7 +17,7 @@ function About() {
             <ChatHistory>
                 <History>
                     <TextUser style={{ justifyContent: "start" }}>
-                        <img
+                        <Image
                             src={evertonAvatar}
                             alt="bot"
                             style={{ width: "40px", height: "40px", borderRadius: "6.7px", alignSelf: "end", marginBottom: "0.2rem" }}
@@ -36,7 +36,7 @@ function About() {
                             possibilitando o processamento inteligente das mensagens enviadas pelo usuário.
                             <br /><br /><strong>Desenvolvedor: Everton Freitas</strong>
                             
-                        {ShowLike ? (<HeartFill show={ShowLike} color="#d94f5a" size={26} weight="fill"/>) : ( <HeartRegular color="#d94f5a" size={26} /> ) }   
+                        {ShowLike ? (<HeartFill show={ShowLike} color="#d94f5a" size={24} weight="fill"/>) : ( <HeartRegular color="#d94f5a" size={24} /> ) }   
                         </Text>
                          
                     </TextUser>
@@ -45,6 +45,7 @@ function About() {
             </ChatHistory>
 
             <Chat>
+                 <div style={{ position: "relative", width: "100%" }}>
                 <Input
                     minRows={1}
                     maxRows={8}
@@ -53,8 +54,9 @@ function About() {
                 />
                 <Button variant="like" onClick={handleToggle}>
                     
-                    <Heart size={26} />
+                    <Heart size={20} />
                 </Button>
+                </div>
             </Chat>
         </ChatContainer>
     )
