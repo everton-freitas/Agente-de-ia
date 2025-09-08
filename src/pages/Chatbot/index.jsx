@@ -112,7 +112,7 @@ function Chatbot() {
       const sessionId = localStorage.getItem("sessionId"); 
 
       const res = await axios.post(
-        "https://integralci-oculum.jhujt5.easypanel.host/webhook/chat",
+        "https://lici.app.n8n.cloud/webhook/chat",
         { message: messageToSend, sessionId },
         { headers: { "Content-Type": "application/json" } }
       );
